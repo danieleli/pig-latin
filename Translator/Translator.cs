@@ -28,6 +28,8 @@ namespace Translator
 
         public string TranslateWord(string word)
         {
+            if (word.Length == 0) return "";
+
             word = _alphaOnlyRegEx.Replace(word, "");
             word = word.ToLower();
 

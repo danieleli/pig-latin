@@ -43,6 +43,20 @@ namespace Translator
             Assert.Equal(expectedOutput, output);
         }
 
+        [Fact]
+        public void Blank_Returns_Blank()
+        {
+            // arrange
+            string input          = "";
+            string expectedOutput = "";
+
+            // act
+            var output = _translator.Translate(input);
+
+            // assert
+            Assert.Equal(expectedOutput, output);
+        }
+
         [Theory]
         [InlineData("Above",  "aboveay")]
         [InlineData("each",   "eachay")]
