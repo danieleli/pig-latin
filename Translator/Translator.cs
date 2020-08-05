@@ -1,12 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace Translator
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text.RegularExpressions;
+
     public class Translator
     {
         private static readonly char[] _vowels = "aeiou".ToCharArray();
+        private static readonly Regex _alphaOnlyRegEx = new Regex("[^a-zA-Z]");
 
         public string Translate(string input)
         {
@@ -26,10 +28,12 @@ namespace Translator
 
         public string TranslateWord(string word)
         {
+            word = _alphaOnlyRegEx.Replace(word, "");
             word = word.ToLower();
-            var startWithVowel = _vowels.Contains(word.First());
 
-            if (!startWithVowel)
+            var startsWithVowel = _vowels.Contains(word.First());
+
+            if (!startsWithVowel)
             {
                 word = word.Substring(1) + word.First();
             }

@@ -71,5 +71,17 @@ namespace Translator
             // assert
             Assert.Equal(expectedOutput, output);
         }
+
+        [Theory]
+        [InlineData("Birds!",    "irdsbay")]
+        [InlineData("feath-er",  "eatherfay")]
+        public void RemoveNonAlphaCharacters(string word, string expectedOutput)
+        {
+            // act
+            var output = _translator.TranslateWord(word);
+
+            // assert
+            Assert.Equal(expectedOutput, output);
+        }
     }
 }
