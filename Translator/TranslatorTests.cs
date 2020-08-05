@@ -19,5 +19,20 @@ namespace Translator
             // assert
             Assert.Equal(expectedOutput, output);
         }
+
+        [Fact]
+        public void NullReturnsNull()
+        {
+            // arrange
+            string input          = null;
+            string expectedOutput = null;
+            var translator        = new Translator();
+
+            // act
+            var output = translator.Translate(input);
+
+            // assert
+            Assert.Equal(expectedOutput, output);
+        }
     }
 }
