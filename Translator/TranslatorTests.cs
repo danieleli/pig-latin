@@ -57,5 +57,16 @@ namespace Translator
             // assert
             Assert.Equal(expectedOutput, output);
         }
+
+        [Theory]
+        [InlineData("Birds", "irdsbay")]
+        public void WordStartsWithConsonant(string word, string expectedOutput)
+        {
+            // act
+            var output = _translator.TranslateWord(word);
+
+            // assert
+            Assert.Equal(expectedOutput, output);
+        }
     }
 }
