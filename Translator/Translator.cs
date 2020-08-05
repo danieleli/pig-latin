@@ -25,7 +25,8 @@ namespace Translator
         }
 
         public string TranslateWord(string word)
-        {   
+        {
+            word = word.ToLower();
             if (_vowels.Contains(word.First()))
             {
                 return word + "ay";
