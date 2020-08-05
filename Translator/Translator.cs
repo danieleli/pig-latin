@@ -27,15 +27,14 @@ namespace Translator
         public string TranslateWord(string word)
         {
             word = word.ToLower();
-            if (_vowels.Contains(word.First()))
-            {
-                return word + "ay";
-            }
-            else
+            var startWithVowel = _vowels.Contains(word.First());
+
+            if (!startWithVowel)
             {
                 word = word.Substring(1) + word.First();
-                return word + "ay";
             }
+
+            return word + "ay";
         }
     }
 }
