@@ -6,13 +6,15 @@ namespace Translator
 {
     public class Translator
     {
+        private static readonly char[] _vowels = "aeiou".ToCharArray();
+
         public string Translate(string input)
         {
             if (input == null) return null;
 
             var words = input.Split(' ');
             var rtnWords = new List<string>();
-
+            
             foreach (var word in words)
             {
                 var newWord = TranslateWord(word);
@@ -23,7 +25,12 @@ namespace Translator
         }
 
         public string TranslateWord(string word)
-        {
+        {   
+            if (_vowels.Contains(word.First()))
+            {
+                return word + "ay";
+            }
+
             return word;
         }
     }
