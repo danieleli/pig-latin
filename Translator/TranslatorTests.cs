@@ -44,11 +44,11 @@ namespace Translator
         }
 
         [Theory]
-        [InlineData("Above", "aboveay")]
-        [InlineData("each", "eachay")]
+        [InlineData("Above",  "aboveay")]
+        [InlineData("each",   "eachay")]
         [InlineData("island", "islanday")]
-        [InlineData("of","ofay")]
-        [InlineData("unary", "unaryay")]
+        [InlineData("of",     "ofay")]
+        [InlineData("unary",  "unaryay")]
         public void WordStartsWithVowel_Appends_Ay(string word, string expectedOutput)
         {
             // act
@@ -59,7 +59,10 @@ namespace Translator
         }
 
         [Theory]
-        [InlineData("Birds", "irdsbay")]
+        [InlineData("Birds",    "irdsbay")]
+        [InlineData("feather",  "eatherfay")]
+        [InlineData("flock",    "lockfay")]
+        [InlineData("together", "ogethertay")]
         public void WordStartsWithConsonant(string word, string expectedOutput)
         {
             // act

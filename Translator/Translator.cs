@@ -31,8 +31,11 @@ namespace Translator
             {
                 return word + "ay";
             }
-
-            return word;
+            else
+            {
+                word = word.Substring(1) + word.First();
+                return word + "ay";
+            }
         }
     }
 }
