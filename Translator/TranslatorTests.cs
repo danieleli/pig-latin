@@ -43,18 +43,19 @@ namespace Translator
             Assert.Equal(expectedOutput, output);
         }
 
-        [Fact]
-        public void WordStartsWithVowel_Appends_Ay()
+        [Theory]
+        [InlineData("above", "aboveay")]
+        [InlineData("each", "eachay")]
+        [InlineData("island", "islanday")]
+        [InlineData("of","ofay")]
+        [InlineData("unary", "unaryay")]
+        public void WordStartsWithVowel_Appends_Ay(string word, string expectedOutput)
         {
-            // arrange
-            var word = "of";
-            var expected = "ofay";
-
             // act
             var output = _translator.TranslateWord(word);
 
             // assert
-            Assert.Equal(expected, output);
+            Assert.Equal(expectedOutput, output);
         }
     }
 }
