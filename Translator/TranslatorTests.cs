@@ -44,7 +44,7 @@ namespace Translator
         }
 
         [Theory]
-        [InlineData("above", "aboveay")]
+        [InlineData("Above", "aboveay")]
         [InlineData("each", "eachay")]
         [InlineData("island", "islanday")]
         [InlineData("of","ofay")]
